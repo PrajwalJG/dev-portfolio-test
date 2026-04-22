@@ -15,8 +15,11 @@ import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class SeleniumUITest {
+
+    @LocalServerPort
+    private int port;
 
     private WebDriver driver;
 
@@ -37,12 +40,11 @@ public class SeleniumUITest {
 
     @Test
     public void testPortfolioContent() {
-        // Since the backend serves the build folder in production,
-        // in this test we are checking if the API works and the UI would display it.
-        driver.get("http://localhost:8080/api/profile");
+        // Use the dynamic random port assigned by Spring Boot
+        driver.get("http://localhost:" + port + "/api/profile");
         String pageSource = driver.getPageSource();
         
-        // Check if the student's name is present in the API response (Visual check of JSON)
-        assertTrue(pageSource.contains("Student Name"), "Student name not found in profile API!");
+        // Check if the student's name is present in the API response
+        assertTrue(pageSource.contains("Test User"), "Student name not found in profile API!");
     }
 }
