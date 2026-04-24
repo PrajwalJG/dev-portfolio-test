@@ -17,16 +17,16 @@ public class ProfileController {
         Map<String, Object> profile = new HashMap<>();
 
         // --- STUDENTS: Personalize your portfolio here! ---
-        profile.put("name", "Test User");
-        profile.put("role", "Full Stack DevOps Engineer");
+        profile.put("name", "Samudra Aneesh");
+        profile.put("role", "AI Engineer");
         profile.put("tagline", "Automating the future, one pipeline at a time.");
-        profile.put("bio", "I am a passionate developer currently participating in the DevOps Workshop. I specialize in building scalable Java applications and modern React frontends, all while keeping the CI/CD pipeline green.");
+        profile.put("bio", "I am a  developer currently participating in the DevOps Workshop. I specialize in building scalable Java applications and modern React frontends, all while keeping the CI/CD pipeline green.");
 
         // Skills Categorized
         Map<String, String[]> skills = new HashMap<>();
-        skills.put("Frontend", new String[]{"React", "JavaScript", "HTML5", "CSS3"});
+        skills.put("Frontend", new String[]{"React", "JavaScript"});
         skills.put("Backend", new String[]{"Java", "Spring Boot", "REST APIs", "Maven"});
-        skills.put("DevOps", new String[]{"Docker", "Jenkins", "Git", "Linux"});
+        skills.put("DevOps", new String[]{"Docker"});
         profile.put("skills", skills);
 
         // Projects Placeholder

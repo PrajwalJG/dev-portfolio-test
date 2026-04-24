@@ -29,7 +29,7 @@ public class SeleniumUITest {
         options.addArguments("--headless");
         options.addArguments("--no-remote");
         options.addArguments("--window-size=1920,1080");
-        
+
         driver = new FirefoxDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
@@ -46,8 +46,8 @@ public class SeleniumUITest {
         // Use the dynamic random port assigned by Spring Boot
         driver.get("http://localhost:" + port + "/api/profile");
         String pageSource = driver.getPageSource();
-        
+
         // Check if the student's name is present in the API response
-        assertTrue(pageSource.contains("Test User"), "Student name not found in profile API!");
+        assertTrue(pageSource.contains("Samudra Aneesh"), "Student name not found in profile API!");
     }
 }
