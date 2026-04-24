@@ -15,13 +15,13 @@ public class ProfileController {
     @GetMapping("/profile")
     public Map<String, Object> getProfile() {
         Map<String, Object> profile = new HashMap<>();
-        
+
         // --- STUDENTS: Personalize your portfolio here! ---
-        profile.put("name", "Student Name");
+        profile.put("name", "Test User");
         profile.put("role", "Full Stack DevOps Engineer");
         profile.put("tagline", "Automating the future, one pipeline at a time.");
         profile.put("bio", "I am a passionate developer currently participating in the DevOps Workshop. I specialize in building scalable Java applications and modern React frontends, all while keeping the CI/CD pipeline green.");
-        
+
         // Skills Categorized
         Map<String, String[]> skills = new HashMap<>();
         skills.put("Frontend", new String[]{"React", "JavaScript", "HTML5", "CSS3"});
@@ -41,7 +41,7 @@ public class ProfileController {
         profile.put("github", "https://github.com/yourusername");
         profile.put("linkedin", "https://linkedin.com/in/yourusername");
         profile.put("email", "student@example.com");
-        
+
         return profile;
     }
 }
